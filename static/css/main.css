@@ -1,5 +1,6 @@
 body{
     background-color: #0f121f;
+    overflow-x: hidden;
 }
 
 .clare,h2{
