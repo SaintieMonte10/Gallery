@@ -6,8 +6,8 @@
     <div class="row">
         {% if images %}
         {% for image in images %}
-        <div class="col-sm-6 col-md-3 col-lg-4">
-            <h1>{{image.image_name}}</h1>
+        <div class="col-sm-6 col-md-3 col-lg-4" > 
+            <h1 class="soho">{{image.image_name}}</h1>
             <img src="{{image.image.url}}" alt="{{image.image_name}}" height="300px;" width="300px;"> 
         </div>
         {% endfor %}

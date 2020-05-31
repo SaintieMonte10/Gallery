@@ -1,6 +1,7 @@
 virtual/
 .env
 
+requirements.txt
 ### Code ###
 .vscode/
 !.vscode/settings.json

@@ -16,6 +16,11 @@ h3{
   color: white;
 }
 
+.soho{
+  color: white;
+  font-family: 'Cookie', cursive;
+}
+
 .my_image {
   border-radius: 5px;
   cursor: pointer;
