@@ -1,75 +1,94 @@
 {% load bootstrap4 %}
 {% load static%}
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    {%  block styles %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-        integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Carter+One&display=swap" rel="stylesheet">
-    {% bootstrap_css %}
-    <link rel="stylesheet" href="{% static 'css/main.css'%}">
-    {% endblock %}
-    {% if title %}
-    <title>Django Blog - {{ title }}</title>
-    {% else %}
-    <title>Django Blog</title>
-    {% endif %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  {%  block styles %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Carter+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/main.css'%}">
+  {% endblock %}
+  {% if title %}
+  <title>Django Blog - {{ title }}</title>
+  {% else %}
+  <title>Django Blog</title>
+  {% endif %}
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbarsucess bg-success sticky-top">
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+  <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'homePage' %}">Home <span class="sr-only">(current)</span></a>
-                </li>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Location
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'homePage' %}">Home <span class="sr-only">(current)</span></a>
+        </li>
 
-                        <a class="dropdown-item" href="{% url 'search_location' 'Nairobi' %}">Nairobi</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'search_location' 'India' %}">India</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'search_location' 'Mexico' %}">Mexico</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'search_location' 'Mexico' %}">Canada</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Location
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <a class="dropdown-item" href="{% url 'search_location' 'Nairobi' %}">Nairobi</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'search_location' 'India' %}">India</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'search_location' 'Mexico' %}">Mexico</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'search_location' 'Mexico' %}">Canada</a>
 
 
-                    </div>
-                </li>
+          </div>
+        </li>
 
-            </ul>
-            <form class="navbar-form" role="search" action="{% url 'search_results' %}">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="e.g Food,Nature,Fashion and Cars" name="image">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default btn-outline-info ml-1" type="submit">search</i></button>
-                    </div>
-                </div>
-            </form>
+      </ul>
+      <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search images" name="image">
+          <div class="input-group-btn">
+            <button class="btn btn-default btn-outline-info ml-1" type="submit">search</i></button>
+          </div>
         </div>
-    </nav>
+      </form>
+    </div>
+  </nav>
+  <hr style="height:2px;border-width:0;color:white;background-color:white">
 
+  {% block scripts %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="dist/clipboard.min.js"></script>
+  {% endblock %}
 
 </body>
 
 </html>
+
+{% block content %}
+<div class="clare">
+    <h3>Welcome To La Galeria</h3>
+    <h6>Suggested: Nature, Culture, Landscape, Museum, Technology, Food, more...</h6>    
+</div>
+<br>
+
+{% endblock %}
